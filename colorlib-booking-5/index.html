@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Booking</title>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link rel="icon" href="../Nouveau dossier/RES/plane_takeoff_13263.png">
+   
+</head>
+<body>
+	<div id="booking-index" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<form>
+							<div class="form-group">
+								<div class="form-checkbox">
+									<label for="roundtrip">
+										<input type="radio" id="roundtrip" name="flight-type">
+										<span></span>Roundtrip
+									</label>
+									<label for="one-way">
+										<input type="radio" id="one-way" name="flight-type">
+										<span></span>One way
+									</label>
+									<label for="multi-city">
+										<input type="radio" id="multi-city" name="flight-type">
+										<span></span>Multi-City
+									</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Flying from</span>
+										<input class="form-control" type="text" placeholder="City or airport">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Flyning to</span>
+										<input class="form-control" type="text" placeholder="City or airport">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Departing</span>
+										<input class="form-control" type="date" required>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Booking Days</span>
+										<div class="form-control">
+											<button id="plus1" onclick="increment1()"><img src="../Nouveau dossier/RES/+.svg" alt="" height="25" width="25"/></button>
+											<span id="counter1">0</span>
+											<button id="minus1" onclick="decrement1()"><img src="../Nouveau dossier/RES/-.svg" alt="" height="25" width="25" /></button>
+										  </div>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Adults (18+)</span>
+										<div class="form-control">
+											<button id="plus2" onclick="increment2()"><img src="../Nouveau dossier/RES/+.svg" alt="" height="25" width="25"/></button>
+											<span id="counter2">0</span>
+											<button id="minus2" onclick="decrement2()"><img src="../Nouveau dossier/RES/-.svg" alt="" height="25" width="25" /></button>
+										  </div>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Children (0-17)</span>
+										<div class="form-control">
+											<button id="plus3" onclick="increment3()"><img src="../Nouveau dossier/RES/+.svg" alt="" height="25" width="25"/></button>
+											<span id="counter3">0</span>
+											<button id="minus3" onclick="decrement3()"><img src="../Nouveau dossier/RES/-.svg" alt="" height="25" width="25" /></button>
+										  </div>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Travel class</span>
+										<select class="form-control">
+											<option>Economy class</option>
+											<option>Business class</option>
+											<option>First class</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-btn">
+										<button class="submit-btn">Show flights</button>
+										<span id="prix">0</span> <span id="price-holder">€ </span>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header" id="myHeader">
+		<div class="logo"><img src="../Nouveau dossier/RES/dropdown_102903.ico" alt="" height="80"></div>
+		<div class="slogan">Just Feel It.</div>
+		  <span class="options" id="acceuil"><a href="file:///C:/Users/ASUS/OneDrive/Bureau/go%20my%20code/Nouveau%20dossier/home%20page.html" style="color: grey;">ACCEUIL</a>  </span>
+		  <span class="options" id="booking"><a href="file:///C:/Users/ASUS/OneDrive/Bureau/go%20my%20code/colorlib-booking-5/index.html" style="color: grey;"> DESTINATION </a> </span>
+		  <span class="options" id="destination"><a href="file:///C:/Users/ASUS/OneDrive/Bureau/go%20my%20code/Nouveau%20dossier/video.html#" style="color: grey;">BOOKING </a></span>
+		  <span class="options" id="contact"><a href="file:///C:/Users/ASUS/OneDrive/Bureau/go%20my%20code/Nouveau%20dossier/ContactFrom_v15/index.html"style="color: grey;"> CONTACT</a></span>
+	   </div>
+	   <div class="abab">
+		<div class="about-us">
+			<input id="stick" type="text" placeholder="Enter Email" name="email" required>
+		  <button id="sticky">s'inscrire</button>
+			<div class="icons">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-youtube"></a>
+			<a href="#" class="fa fa-instagram"></a>
+		  </div>
+		  <div class="about">
+			<div class="logo2"><img src="./RES/dropdown_102903.ico" alt="" height="110"></div>
+		   <div class="slogan2">Just Feel It.</div>
+		  </div>
+		  <div class="country-selection">
+			<select name="countries" id="countries" style="width: 340px; height: 50px;" >
+				<option>Choose a country</option>
+				<option value="Argentina">Argentina</option>
+				<option value="Australia">Australia</option>
+				<option value="Brasil">Brasil</option>
+				<option value="Chilie">Chilie</option>
+				<option value="Colombia">Colombia</option>
+				<option value="Czech">Czech</option>
+				<option value="France">France</option>
+				<option value="Italy">Italy</option>
+				<option value="Mexico">Mexico</option>
+				<option value="Peru">Peru</option>
+				<option value="Poland">Poland</option>
+				<option value="Portugal">Portugal</option>
+				<option value="Spain">Spain</option>
+				<option value="Turkey">Turkey</option>
+				<option value="Argentina">Tunisia</option>
+				<option value="UK">UK</option>
+			</select>
+			<div class="links-des">
+			  <a href="Qui somme nous ?" style="color: grey;">Qui somme nous ?</a> <br>
+			  <a href="#" style="color: grey;">Emplois</a> <br>
+			  <a href="#" style="color: grey;">Presse</a> <br>
+			  <a href="#" style="color: grey;">Relations investisseurs</a>
+			</div>
+			<div class="links-ab">
+			  <a href="#" style="color: grey;">Apps mobiles - où que vous soyez</a> <br>
+			  <a href="#" style="color: grey;">Business Studio</a> <br>
+			  <a href="#" style="color: grey;">Magazine</a>
+		  </div>
+		  <div class="links-ad">
+		  <a href="#" style="color: grey;">Aide</a> <br>
+		  <a href="#" style="color: grey;">comment fonctionne </a> <br>
+		  <a href="#" style="color: grey;">Conditions générales</a> <br>
+		  <a href="#"  style="color: grey;">Mentions légales</a> <br>
+		  <a href="#" style="color: grey;">Protection des données</a> <br>
+		  <a href="#" style="color: grey;">Plan du site</a> <br>
+		  <a href="#" style="color: grey;">Comment fonctionnent vos avis?</a>
+		  
+		  </div>
+		  </div>
+	   </div>
+	   <div class="maps">
+		   <div class="hotels">
+			  <div class="box" id="box1">
+                 <div class="smaller-box">
+					<div class="w3-content w3-display-container">
+						<img class="mySlides" src="../Nouveau dossier/RES/singita-grumeti-sabora.jpg" style="width:100%">
+						<img class="mySlides" src="../Nouveau dossier/RES/slide3.jpeg" style="width:100%">
+						<img class="mySlides" src="../Nouveau dossier/RES/slide4.jpg" style="width:100%">
+						<img class="mySlides" src="../Nouveau dossier/RES/slide5.jpg" style="width:100%">
+					  
+						<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+						<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+					  </div>
+					  
+					  <script>
+					  var slideIndex = 1;
+					  showDivs(slideIndex);
+					  
+					  function plusDivs(n) {
+						showDivs(slideIndex += n);
+					  }
+					  
+					  function showDivs(n) {
+						var i;
+						var x = document.getElementsByClassName("mySlides");
+						if (n > x.length) {slideIndex = 1}
+						if (n < 1) {slideIndex = x.length}
+						for (i = 0; i < x.length; i++) {
+						  x[i].style.display = "none";  
+						}
+						x[slideIndex-1].style.display = "block";  
+					  }
+					  </script>
+				 </div>
+				 <div class="information">
+					
+                      <h3> Singita Grumeti Sabora</h3>
+						 <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+						 <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+						 <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					 <div class="price">
+						 149 € 
+						 <button class="btn" id="btn1" onclick="reserve1()">reserve</button>
+					 </div>
+				 </div>
+			  </div>
+			  <div class="box" id="box2" >
+				<div class="smaller-box" >
+					<img src="../Nouveau dossier/RES/Anantara-Chiang-Mai-Thailand.jpg" alt="hotel" style="width: 280px; height: 135px;">
+				</div>
+				<div class="information">
+					
+					<h3> Anantara Chiang-Mai</h3>
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+				   <div class="price">
+					   199 €
+					   <button class="btn" id="btn2" onclick="reserve2()">reserve</button>
+				   </div>
+			   </div>
+			  </div>
+			  <div class="box" id="box3" >
+                <div class="smaller-box">
+					<img src="../Nouveau dossier/RES/twin-farms-vermont.jpg" alt="hotel" style="width: 280px; height: 135px;">
+				</div>
+				<div class="information">
+					
+					<h3> Twin Farms</h3>
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+				   <div class="price">
+					   149 €
+					   <button class="btn" id="btn3" onclick="reserve3()">reserve</button>
+				   </div>
+			   </div>
+			</div>
+			<div class="box" id="box4" >
+				<div class="smaller-box">
+					<img src="../Nouveau dossier/RES/the-nautilus-maldives.jpg" alt="hotel" style="width: 280px; height: 135px;">
+				</div>
+				<div class="information">
+					
+					<h3> The Nautilus</h3>
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+				   <div class="price">
+					   172 €
+					   <button class="btn" id="btn4" onclick="reserve4()">reserve</button>
+				   </div>
+			   </div>
+			</div>
+			<div class="box" id="box5" >
+				<div class="smaller-box">
+					<img src="../Nouveau dossier/RES/the-mulia-bali.jpg" alt="hotel" style="width: 280px; height: 135px;">
+				</div>
+				<div class="information">
+					
+					<h3> The Mulia</h3>
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+					   <img src="../Nouveau dossier/RES/star_favourite_15499.png" alt="" width="30" height="30">
+				   <div class="price">
+					   210 €
+					   <button class="btn" id="btn5" onclick="reserve5()">reserve</button>
+				   </div>
+			   </div>
+			</div>
+		   </div>
+		   <div class="trip">
+			<div id="map-container-google-1" class="z-depth-1-half map-container" style="box-shadow: 3px 6px 3px #123453">     
+			  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104888.47575618919!2d10.66305777170632!3d34.76151547864985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13002cda1486c695%3A0x22dfe0a62c50ce6f!2sSfax!5e0!3m2!1sen!2stn!4v1596623095711!5m2!1sen!2stn" width="100%" height="690" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			 </div>
+		   </div>
+	   </div>
+	   <div >
+
+	   </div>
+	   
+	   <div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#">About</a>
+		<a href="#">Services</a>
+		<a href="#">Clients</a>
+		<a href="#">Contact</a>
+	  </div>
+	  <div class="menu">
+	  <span style="position: absolute; font-size:40px;cursor:pointer" onclick="openNav()">&#9776; <br>
+	    M  <br> 
+		e <br> 
+		n <br>
+		u <br></span>
+	</div>
+	  <script>
+	  function openNav() {
+		document.getElementById("mySidenav").style.width = "250px";
+	  }
+	  
+	  function closeNav() {
+		document.getElementById("mySidenav").style.width = "0";
+	  }
+	  </script>
+
+	   <script>
+		   var counter = document.getElementById("btn1");
+		   var prix = document.getElementById("prix") ;
+		   function reserve1(){    
+			prix.innerHTML =+ prix.innerHTML+149 ;   
+		};
+		var counter1 = document.getElementById("btn2");
+		   var prix1 = document.getElementById("prix") ;
+		   function reserve2(){    
+			prix1.innerHTML =+ prix.innerHTML+199 ;   
+		};
+		var counter2 = document.getElementById("btn3");
+		   var prix2 = document.getElementById("prix") ;
+		   function reserve3(){    
+			prix2.innerHTML =+ prix.innerHTML+149 ;   
+		};
+		var counter3 = document.getElementById("btn4");
+		   var prix3 = document.getElementById("prix") ;
+		   function reserve4(){    
+			prix3.innerHTML =+ prix.innerHTML+172 ;   
+		};
+		var counter4 = document.getElementById("btn5");
+		   var prix5 = document.getElementById("prix") ;
+		   function reserve5(){    
+			prix5.innerHTML =+ prix.innerHTML+210 ;   
+		};
+
+		var counter1 = document.getElementById("counter1");
+   
+function increment1 (){ 
+counter1.innerHTML =+ counter1.innerHTML +1;
+prix.innerHTML =+ prix.innerHTML +150 ;
+
+};
+function decrement1 (){ 
+
+	counter1.innerHTML =+ counter1.innerHTML -1;
+prix.innerHTML =+ prix.innerHTML -150 ;
+};
+
+
+
+var counter2 = document.getElementById("counter2");
+   
+function increment2 (){
+counter2.innerHTML =+ counter2.innerHTML +1;
+prix.innerHTML =+ prix.innerHTML +72 ;
+
+};
+function decrement2 (){ 
+
+	counter2.innerHTML =+ counter2.innerHTML -1;
+prix.innerHTML =+ prix.innerHTML -72 ;
+};
+
+
+var counter3 = document.getElementById("counter3");
+   
+function increment3 (){
+counter3.innerHTML =+ counter3.innerHTML +1;
+prix.innerHTML =+ prix.innerHTML +26 ;
+
+};
+function decrement3 (){ 
+
+	counter3.innerHTML =+ counter3.innerHTML -1;
+prix.innerHTML =+ prix.innerHTML -26 ;
+};
+	   </script>
+	   
+</body>
+
+</html>
